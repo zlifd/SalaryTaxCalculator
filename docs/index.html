@@ -20,7 +20,7 @@
 <body>
 
 <h1>Salaries Tax Calculator (2024/25 Financial Year onwards)</h1>
-  <p>Hong Kong is famous with its low tax rate system. How low it is? We are going to dig it out via this webpage. The salaries tax payable is calculated at progressive rates on your net chargeable income or at standard rate on your net income, whichever is lower. The calculations are shown from the tables below. Feel free to try out this calculator by inputing the variables below (all in Hong Kong Dollars, HK$) and click `Calculate`</p>
+  <p>Hong Kong is famous with its low tax rate system. How low it is? We are going to dig it out via this webpage. The salaries tax payable is calculated at progressive rates on your net chargeable income or at standard rate on your net income, whichever is lower. The calculations are shown from the tables below. Feel free to try out this calculator by inputing the variables below (all in Hong Kong Dollars, HK$) and click `Calculate`. Note that the calculator has already taken into account of the basic allowances $132000. You only need to input the remaining amount of the allowances in the input box.</p>
   <p>* Net Chargeable Income = Total Income - Deductions - Allowances</p>
   <p>* Net Income = Total Income - Deductions</p>
 
@@ -152,8 +152,8 @@
         document.getElementById('result3').innerHTML = `<span style="color: red; font-weight: bold;">$${finalTax}</span> (based on <span style="color: red; font-weight: bold;">Standard Rate</span> calculation since it is lower.)`;
       }
       else {
-        document.getElementById('result3').innerHTML = `<span style="color: red; font-weight: bold;">$${finalTax}</span> (based on <span style="color: red; font-weight: bold;">Regression Rate</span> calculation since it is lower.)`;      }
-    }
+        document.getElementById('result3').innerHTML = `<span style="color: red; font-weight: bold;">$${finalTax.toLocaleString()}</span> (based on <span style="color: red; font-weight: bold;">Regression Rate</span> calculation since it is lower.)`;
+      }
   </script>
   <p>References: <a href="https://www.gov.hk/en/residents/taxes/etax/services/tax_computation.htm" target="_blank">https://www.gov.hk/en/residents/taxes/etax/services/tax_computation.htm</a></p>
   <p>Last Updated: 2024-04-22</p>
