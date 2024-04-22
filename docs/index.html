@@ -91,6 +91,11 @@
   <br>
   <button onclick="calculateTax()">Calculate</button>
   <br>
+
+
+  <p id="result4"></p>
+  <p id="result5"></p>
+  
   <table>
     <tr>
       <th>Calculation Method</th>
@@ -123,6 +128,9 @@
       let net_chargeable_income = total_income - deductions - allowances - 132000;
 
 
+      document.getElementById('result4').innerHTML = `net income = ${total_income} - ${deductions} = ${net_income}`;
+      
+      
       if (net_income <0){net_income = 0;}
       if (net_chargeable_income <0){net_chargeable_income = 0;}
       // Calculation based on Standard Rate
