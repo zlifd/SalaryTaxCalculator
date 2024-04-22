@@ -116,7 +116,7 @@
     function calculateTax() {
       const total_income = document.getElementById('total_income').value;
       const deductions = document.getElementById('deductions').value;
-      const allowances = document.getElementById('allowances').value;
+      const allowances = document.getElementById('allowances').value = '132000';
       let tax1 = 0;
       let tax2 = 0;
       let net_income = total_income - deductions;
