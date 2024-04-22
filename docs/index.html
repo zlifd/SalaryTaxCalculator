@@ -126,14 +126,13 @@
       let tax2 = 0;
       let net_income = total_income - deductions;
       let net_chargeable_income = total_income - deductions - allowances - 132000;
-
-
-      document.getElementById('result4').innerHTML = `Net Income = $${net_income}`;
-      document.getElementById('result5').innerHTML = `Net Chargeable Income = $${net_chargeable_income}`;
-      
       
       if (net_income <0){net_income = 0;}
       if (net_chargeable_income <0){net_chargeable_income = 0;}
+
+      document.getElementById('result4').innerHTML = `Net Income = $${net_income}`;
+      document.getElementById('result5').innerHTML = `Net Chargeable Income = $${net_chargeable_income}`;
+  
       // Calculation based on Standard Rate
       if (net_income <= 5000000) {
         tax1 = net_income * 0.15;
