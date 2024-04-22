@@ -119,8 +119,8 @@
       const allowances = document.getElementById('allowances').value;
       let tax1 = 0;
       let tax2 = 0;
-      let net_income = total_income - deductions - allowances;
-      let net_chargeable_income = total_income - deductions;
+      let net_income = total_income - deductions;
+      let net_chargeable_income = total_income - deductions - allowances;
 
       // Calculation based on Standard Rate
       if (net_income <= 5000000) {
