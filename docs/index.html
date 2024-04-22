@@ -21,8 +21,8 @@
 
 <h1>Salaries Tax Calculator (2024/25 Financial Year onwards)</h1>
   <p>Hong Kong is famous with its low tax rate system. How low it is? We are going to dig it out via this webpage. The salaries tax payable is calculated at progressive rates on your net chargeable income or at standard rate on your net income, whichever is lower. The calculations are shown from the tables below. Feel free to try out this calculator by inputing the variables below (all in Hong Kong Dollars, HK$) and click `Calculate`. Note that the calculator has already taken into account of the basic allowances $132000. You only need to input the remaining amount of the allowances in the input box.</p>
-  <p>* Net Chargeable Income = Total Income - Deductions - Allowances</p>
   <p>* Net Income = Total Income - Deductions</p>
+  <p>* Net Chargeable Income = Total Income - Deductions - Allowances</p>
 
 
   <h1>Standard Rate (標準税率)</h1>
@@ -128,7 +128,8 @@
       let net_chargeable_income = total_income - deductions - allowances - 132000;
 
 
-      document.getElementById('result4').innerHTML = `net income = ${total_income} - ${deductions} = ${net_income}`;
+      document.getElementById('result4').innerHTML = `Net Income = $${net_income}`;
+      document.getElementById('result5').innerHTML = `Net Chargeable Income = $${net_chargeable_income}`;
       
       
       if (net_income <0){net_income = 0;}
