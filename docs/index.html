@@ -20,7 +20,7 @@
 <body>
 
 <h1>Salaries Tax Calculator (2024/25 Financial Year onwards)</h1>
-  <p>Hong Kong is famous with its low tax rate system. How low it is? We are going to dig it out via this webpage. The salaries tax payable is calculated at progressive rates on your net chargeable income or at standard rate on your net income, whichever is lower. The calculations are shown from the tables below. Feel free to try out this calculator by inputing the variables below (all in Hong Kong Dollars, HK$) and click `Calculate`. Note that the calculator has already taken into account of the basic allowances $132000. You only need to input the remaining amount of the allowances in the input box.</p>
+  <p>Hong Kong is famous with its low tax rate system. How low it is? We are going to dig it out via this webpage. The salaries tax payable is calculated at progressive rates on your net chargeable income or at standard rate on your net income, whichever is lower. The calculations are shown from the tables below. Feel free to try out this calculator by inputing the variables below (all in Hong Kong Dollars, HK$) and click `Calculate`. Note that the calculator has already taken into account of the basic allowances $132,000. You only need to input the remaining amount of the allowances in the input box.</p>
   <p>* Net Income = Total Income - Deductions</p>
   <p>* Net Chargeable Income = Total Income - Deductions - Allowances</p>
 
@@ -130,8 +130,8 @@
       if (net_income <0){net_income = 0;}
       if (net_chargeable_income <0){net_chargeable_income = 0;}
 
-      document.getElementById('result4').innerHTML = `Net Income = $${net_income}`;
-      document.getElementById('result5').innerHTML = `Net Chargeable Income = $${net_chargeable_income}`;
+      document.getElementById('result4').innerHTML = `Net Income = $${net_income.toLocaleString()}`;
+      document.getElementById('result5').innerHTML = `Net Chargeable Income = $${net_chargeable_income.toLocaleString()}`;
   
       // Calculation based on Standard Rate
       if (net_income <= 5000000) {
@@ -139,7 +139,7 @@
       } else {
         tax1 = (5000000 * 0.15) + ((net_income - 5000000) * 0.16);
       }
-      document.getElementById('result1').innerHTML = `$${tax1}`;
+      document.getElementById('result1').innerHTML = `$${tax1.toLocaleString()}`;
       // Calculation based on Regression Rate
       if (net_chargeable_income <= 50000) {
         tax2 = net_chargeable_income * 0.02;
@@ -154,13 +154,13 @@
       }
 
       const finalTax = Math.min(tax1, tax2);
-      document.getElementById('result2').innerHTML = `$${tax2}`;
+      document.getElementById('result2').innerHTML = `$${tax2.toLocaleString()}`;
 
       if (finalTax == tax1) {
-        document.getElementById('result3').innerHTML = `<span style="color: red; font-weight: bold;">$${finalTax}</span> (based on <span style="color: red; font-weight: bold;">Standard Rate</span> calculation since it is lower.)`;
+        document.getElementById('result3').innerHTML = `<span style="color: red; font-weight: bold;">$${finalTax.toLocaleString()}</span> (based on <span style="color: red; font-weight: bold;">Standard Rate</span> calculation since it is lower.)`;
       }
       else {
-        document.getElementById('result3').innerHTML = `<span style="color: red; font-weight: bold;">$${finalTax}</span> (based on <span style="color: red; font-weight: bold;">Regression Rate</span> calculation since it is lower.)`;
+        document.getElementById('result3').innerHTML = `<span style="color: red; font-weight: bold;">$${finalTax.toLocaleString()}</span> (based on <span style="color: red; font-weight: bold;">Regression Rate</span> calculation since it is lower.)`;
       }
 
   }
